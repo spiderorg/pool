@@ -82,10 +82,12 @@ func (b *batch) Queue(fn WorkFunc) {
 // WARNING: if this function is not called the results channel will never exhaust,
 // but block forever listening for more results.
 func (b *batch) QueueComplete() {
-	b.m.Lock()
-	b.closed = true
-	close(b.done)
-	b.m.Unlock()
+	if !b.closed {
+		b.m.Lock()
+		b.closed = true
+		close(b.done)
+		b.m.Unlock()
+	}
 }
 
 // Cancel cancels the Work Units belonging to this Batch

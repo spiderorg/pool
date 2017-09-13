@@ -38,6 +38,15 @@ func main() {
 		// use return value
 		fmt.Println(email.Value().(bool))
 	}
+
+	p.Reset()
+
+	wrk := p.Queue(sendEmail("email content for kent"))
+	wrk.Wait()
+
+	v, ok := wrk.Value().(bool)
+	fmt.Println(v, ok)
+
 }
 
 func sendEmail(email string) pool.WorkFunc {
@@ -49,7 +58,7 @@ func sendEmail(email string) pool.WorkFunc {
 
 		if wu.IsCancelled() {
 			// return values not used
-			return nil, nil
+			return false, nil
 		}
 
 		// ready for processing...
