@@ -41,7 +41,7 @@ Use go get.
 
 Then import the pool package into your own code.
 
-	import "gopkg.in/go-playground/pool.v3"
+	import "github.com/go-playground/pool"
 
 
 Important Information READ THIS!
@@ -68,7 +68,7 @@ import (
 	"fmt"
 	"time"
 
-	"gopkg.in/go-playground/pool.v3"
+	"github.com/go-playground/pool"
 )
 
 func main() {
@@ -145,7 +145,7 @@ import (
 	"fmt"
 	"time"
 
-	"gopkg.in/go-playground/pool.v3"
+	"github.com/go-playground/pool"
 )
 
 func main() {

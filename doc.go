@@ -56,7 +56,7 @@ Per Unit Work
         "fmt"
         "time"
 
-        "gopkg.in/go-playground/pool.v3"
+        "github.com/go-playground/pool"
     )
 
     func main() {
@@ -133,7 +133,7 @@ Batch Work
         "fmt"
         "time"
 
-        "gopkg.in/go-playground/pool.v3"
+        "github.com/go-playground/pool"
     )
 
     func main() {
