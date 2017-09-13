@@ -39,6 +39,7 @@ func main() {
 		fmt.Println(email.Value().(bool))
 	}
 
+	p.Cancel()
 	p.Reset()
 
 	wrk := p.Queue(sendEmail("email content for kent"))
